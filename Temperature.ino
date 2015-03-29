@@ -56,11 +56,15 @@ void loop() {
 void timeStamp(){
   time_t t = now();
   Serial.print("Time: ");
+  if(hour(t)<10){
+    serial.print(" ");
+  }
   Serial.print(hour(t));
   Serial.print(":");
+  if(minute(t)<10){
+    serial.print(" ");
+  }
   Serial.print(minute(t));
-  Serial.print(":");
-  Serial.print(second(t));
   Serial.print(" ");
   Serial.print(day(t));
   Serial.print("/");
